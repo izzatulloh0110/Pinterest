@@ -4,6 +4,8 @@ import 'package:clone_pinterest/pages/search_page.dart';
 import 'package:flutter/material.dart';
 void main(){
   runApp(MyApp());
+
+  print("1");
 }
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
