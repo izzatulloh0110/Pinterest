@@ -5,8 +5,8 @@ import 'package:http/http.dart';
 class Network {
   static bool isTester = true;
 
-  static String SERVER_DEVELOPMENT = "api.unsplash.com";
-  static String SERVER_PRODUCTION = "api.unsplash.com";
+  static var SERVER_DEVELOPMENT = "api.unsplash.com";
+  static var  SERVER_PRODUCTION = "api.unsplash.com";
 
   static Map<String, String> getHeaders() {
     Map<String, String> headers = {

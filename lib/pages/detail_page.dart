@@ -22,7 +22,7 @@ class DetailsPage extends StatefulWidget {
 
 class _DetailsPageState extends State<DetailsPage> {
   List<PinterestModel> pinterestModels = [];
-  int PinterestModelsLength = 0;
+  int pinterestModelsLength = 0;
   final ScrollController _scrollController = ScrollController();
   int pageNumber = 0;
   bool isLoading = true;
@@ -37,12 +37,12 @@ class _DetailsPageState extends State<DetailsPage> {
     setState(() {
       isLoading = false;
       pinterestModels = Network.parseResponse(response);
-      PinterestModelsLength = pinterestModels.length;
+      pinterestModelsLength = pinterestModels.length;
     });
   }
 
   void fetchPinterestModels() async {
-    int pageNumber = (pinterestModels.length ~/ PinterestModelsLength + 1);
+    int pageNumber = (pinterestModels.length ~/ pinterestModelsLength + 1);
     String? response =
     await Network.GET(Network.API_LIST, Network.paramsPage(pageNumber));
     List<PinterestModel> newPinterestModels = Network.parseResponse(response!);

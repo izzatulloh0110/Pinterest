@@ -1,10 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:clone_pinterest/models/pinterest_model.dart';
 import 'package:clone_pinterest/pages/detail_page.dart';
-import 'package:clone_pinterest/services/detail_service_page.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:http/http.dart';
 
 class Functiont{
  static PinterestModel? pinterestModel;
@@ -67,10 +64,10 @@ class Functiont{
               Row(
                 children: [
                   Container(
-                    margin: EdgeInsets.only(left: 10,right: 5),
+                    margin: const EdgeInsets.only(left: 10,right: 5),
                     height: 20,
                     width: 20,
-                    decoration: BoxDecoration(
+                    decoration: const BoxDecoration(
                       image: DecorationImage(
                         image: AssetImage("assets/images/image/img_likeButton.png"),
                         fit: BoxFit.cover
@@ -84,15 +81,15 @@ class Functiont{
                ) ],
               )
                   :
-                  SizedBox.shrink(),
-              Container(
+                  const SizedBox.shrink(),
+              SizedBox(
                 height: 40,
                 width: 35,
                 child: IconButton(
                     onPressed: () {
                       buttonBottomSheet(context);
                     },
-                    icon: Icon(
+                    icon: const Icon(
                       Icons.more_horiz_outlined,
                       color: Colors.black,
                       size: 20,
@@ -110,7 +107,7 @@ class Functiont{
         context: context,
         builder: (context){
           return Padding(
-            padding: EdgeInsets.only(left: 15,right:15,top: 25),
+            padding: const EdgeInsets.only(left: 15,right:15,top: 25),
             child: Column(crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Row(
@@ -122,7 +119,7 @@ class Functiont{
                     child: Container(
                       height: 25,
                       width: 25,
-                      decoration: BoxDecoration(
+                      decoration: const BoxDecoration(
                         image: DecorationImage(
 
                           image: AssetImage("assets/images/icons/ic_cancel.png"),
@@ -131,28 +128,28 @@ class Functiont{
                       ),
                     ),
                   ),
-                    SizedBox(width: 20,),
-                    Text("Поделиться",style: TextStyle(fontSize: 17),)
+                    const SizedBox(width: 20,),
+                    const Text("Поделиться",style: TextStyle(fontSize: 17),)
                   ],
                 ),
-                SizedBox(height: 20,),
+                const SizedBox(height: 20,),
                 //#ListView elements
                 SizedBox(
                   height: 120,
                   child: makeListViewInBottomSheet(),
                 ),
-                Divider(),
+                const Divider(),
                 //#Text
-                SizedBox(height: 15,),
-                Text("Скрыть пин",style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),),
-                SizedBox(height: 15,),
-                Text("Жалоба на пин",style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),),
-                SizedBox(height: 5,),
-                Text("Не соответствует правилам сообщества\nPinterest",style: TextStyle(fontSize: 16),),
-                SizedBox(height: 20,),
-                Divider(),
-                SizedBox(height: 20,),
-                Text("Этот пин похож на те, которые вы  недавно просматривали",style: TextStyle(fontSize: 16),)
+                const SizedBox(height: 15,),
+                const Text("Скрыть пин",style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),),
+                const SizedBox(height: 15,),
+                const Text("Жалоба на пин",style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),),
+                const SizedBox(height: 5,),
+                const Text("Не соответствует правилам сообщества\nPinterest",style: TextStyle(fontSize: 16),),
+                const SizedBox(height: 20,),
+                const Divider(),
+                const SizedBox(height: 20,),
+                const Text("Этот пин похож на те, которые вы  недавно просматривали",style: TextStyle(fontSize: 16),)
 
 
 
@@ -167,7 +164,7 @@ class Functiont{
      scrollDirection: Axis.horizontal,
      itemCount: bottomSheetImg.length,
      itemBuilder: (BuildContext context, int index) {
-       return Container(
+       return SizedBox(
          height: 150,
          width: 100,
          child: Column(
@@ -188,7 +185,7 @@ class Functiont{
                  ),
                ),
              ),
-             SizedBox(height: 10,),
+             const SizedBox(height: 10,),
              Text(bottomSheetText[index])
            ],
          ),
